@@ -29,3 +29,137 @@ The following questons were asked inorder to help uncover the truth.
 - Does price vary with Airlines?
 - How does the ticket price vary between Economy and Business class?
 - Does price vary due to change in Source and Destination?
+
+## Analysis Phase
+```select *
+from Clean_Dataset
+
+select avg(price) as avg_price
+from [dbo].[Clean_Dataset]
+where days_left = 1
+
+
+select avg(price) as avg_price
+from [dbo].[Clean_Dataset]
+where days_left = 2
+
+
+select price
+from [dbo].[Clean_Dataset]
+where days_left = 2
+
+select price
+from Clean_Dataset
+where days_left = 1
+
+select distinct airline, source_city
+from Clean_Dataset
+
+select count (*) as distinctcnt
+from (
+select distinct airline,source_city
+from Clean_Dataset
+) as subq
+
+select price, airline
+from Clean_Dataset
+
+select price,source_city, departure_time
+from Clean_Dataset
+where departure_time = 'Evening'
+or departure_time = 'Early_Morning'
+or departure_time = 'Afternoon'
+or departure_time = 'Morning'
+or departure_time = 'Late_Night'
+or departure_time = 'Night'
+order by price desc
+
+select price,source_city, arrival_time
+from Clean_Dataset
+where departure_time = 'Evening'
+or departure_time = 'Early_Morning'
+or departure_time = 'Afternoon'
+or departure_time = 'Morning'
+or departure_time = 'Late_Night'
+or departure_time = 'Night'
+order by price desc
+
+select price,destination_city,departure_time
+from Clean_Dataset
+where departure_time = 'Evening'
+or departure_time = 'Early_Morning'
+or departure_time = 'Afternoon'
+or departure_time = 'Morning'
+or departure_time = 'Late_Night'
+or departure_time = 'Night'
+order by price desc
+
+select price,destination_city,arrival_time
+from Clean_Dataset
+where departure_time = 'Evening'
+or departure_time = 'Early_Morning'
+or departure_time = 'Afternoon'
+or departure_time = 'Morning'
+or departure_time = 'Late_Night'
+or departure_time = 'Night'
+order by price desc
+
+select price
+from Clean_Dataset
+where class = 'Economy'
+
+select price
+from Clean_Dataset
+where class = 'Business'
+
+select price,airline
+from Clean_Dataset
+where airline in ('Air_India','SpiceJet','Vistara', 'GO_FIRST', 'Indigo', 'AirAsia')
+
+select price, airline
+from clean_dataset
+where airline = 'Air_india'
+
+select price
+from clean_dataset
+where airline = 'spicejet'
+
+select price
+from clean_dataset
+where airline = 'Indigo'
+
+select price
+from clean_dataset
+where airline = 'Vistara'
+
+select price
+from clean_dataset
+where airline = 'Go_first'
+
+select price
+from clean_dataset
+where airline = 'Air_Asia'
+
+select trim(upper(airline)) as airline, sum(cast(price as bigint)) as totalprice
+--- sum(cast(price as bigint)) helps to change from int to bigint
+from Clean_Dataset
+group by airline
+order by totalprice desc
+
+select airline, max(price) as maxprice
+from Clean_Dataset
+group by airline
+order by maxprice desc
+
+select price,stops
+from Clean_Dataset
+where stops = 'one'
+
+select price, stops
+from Clean_Dataset
+where stops = 'two_or_more'
+
+select price, stops
+from Clean_Dataset
+where stops = 'zero'
+```
