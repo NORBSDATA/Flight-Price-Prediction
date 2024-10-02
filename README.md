@@ -23,3 +23,9 @@ The dataset was cleaned using Excel spreadsheet and the following steps was take
 ### Note: The dataset contained 3 tables. The original datasets was duplicated and saved on another folder before this phase 
 
 ## Exploratory Phase
+The following questons were asked inorder to help uncover the truth.
+- Are there changes in price if ticket is bought in just 1 or 2 days before departure?
+- Is there changes in price due to departure time and arrival time?
+- Does price vary with Airlines?
+- How does the ticket price vary between Economy and Business class?
+- Does price vary due to change in Source and Destination?
