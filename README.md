@@ -30,7 +30,9 @@ The following questons were asked inorder to help uncover the truth.
 - How does the ticket price vary between Economy and Business class?
 - Does price vary due to change in Source and Destination?
 
-## Analysis Phase
+## Data Analysis
+### Analysis Phase
+
 ```select *
 from Clean_Dataset
 
@@ -38,11 +40,9 @@ select avg(price) as avg_price
 from [dbo].[Clean_Dataset]
 where days_left = 1
 
-
 select avg(price) as avg_price
 from [dbo].[Clean_Dataset]
 where days_left = 2
-
 
 select price
 from [dbo].[Clean_Dataset]
@@ -59,9 +59,9 @@ select count (*) as distinctcnt
 from (
 select distinct airline,source_city
 from Clean_Dataset
-) as subq
+) as subq```
 
-select price, airline
+```select price, airline
 from Clean_Dataset
 
 select price,source_city, departure_time
@@ -163,3 +163,10 @@ select price, stops
 from Clean_Dataset
 where stops = 'zero'
 ```
+### Result of Analysis
+- The prices of flight tends to change drastically in relation to days left. The price increases from an average of $18,992 with 49 days left to an average of $21,591 with a day left before flight take off.
+- In terms of Class, the business class has the highest price with an average price of $53,000 compared to the Economy class with and average price of $7,000.
+However, Vistara Airline contributes to this number with an average price of $55,000 (40.45%) with the least priced airline being Air Asia with an average of $4,000 (5.44%).
+- Night flight prices varies with the highest price ($23,000) in its early hours while late in the night the price has it least price at $9,000.
+- In relation of price to source city with destination, Chennai to Bangalore has the highest price with an average of $25,081 while the least price is from Hyderabad to Delhi with an average price of $17,243.
+- Prices of flight changes drastically due to number of stops, with more money to pay if there's only one stop while no stops at all carries the least price.
