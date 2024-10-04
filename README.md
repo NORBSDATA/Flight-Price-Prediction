@@ -3,6 +3,12 @@
 ## Project Overview
 The Flight Price Prediction analysis seeks to understand how prices of flight are affected by different varying factors. The project will uncover how prices of flight are affected by **booking to date of departure**, **number of stops**, **type and class of airline**, **source and destination** as well as **time of departure**. This analysis at the end will help travelers to make informed decision in terms of budgeting for their trips.
 
+![Flight price prediction dashboard-images-0](https://github.com/user-attachments/assets/93faec48-bc67-4b07-9702-2f9a4ef460eb)
+
+![Flight price prediction dashboard-images-1](https://github.com/user-attachments/assets/19e7a7ca-1696-4b6b-ba57-642d5d00cd0a)
+
+
+
 ## Data Sources
 The dataset was extracted from [kaggle](https://www.kaggle.com/datasets/shubhambathwal/flight-price-prediction/data)
 
